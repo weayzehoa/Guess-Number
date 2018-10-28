@@ -1,1 +1,1 @@
-Guess Number
+這是我第一支用PHP寫的猜數字遊戲.
