@@ -1,5 +1,5 @@
 <form method="POST">
-<input name="guess" maxlength="4" required><input type="submit" value="送出"><br>
+<input type="number" name="guess" maxlength="4" placeholder="請輸入四個數字" autoforcus autocomplete="off" required><input type="submit" value="送出"><br>
 </form>
 訊息:
 
@@ -7,8 +7,9 @@
 session_start();
 $guess["num"]= Array(); //宣告 $guess["num"] 為陣列
 
-if (empty($_POST["guess"]) || !is_numeric($_POST["guess"])) { //如果未輸入任何字 或 輸入其他字元, is_numeric用來判斷是否為數字, !為相反
-echo "請輸入四個數字, 請勿空白或輸入其他字元<br>";               //顯示警告訊息
+if (empty($_POST["guess"])) { //如果未輸入任何字 或 輸入其他字元, is_numeric用來判斷是否為數字, !為相反
+//if (empty($_POST["guess"]) || !is_numeric($_POST["guess"])) { //如果未輸入任何字 或 輸入其他字元, is_numeric用來判斷是否為數字, !為相反
+echo "請勿空白或輸入其他字元<br>";               //顯示警告訊息
 }
 else{
     $guess["num"] = preg_split('//', $_POST["guess"], -1, 1); //將得到的數字字串拆成單個並放入$guess["num"]陣列中
